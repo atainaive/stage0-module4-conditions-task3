@@ -2,12 +2,23 @@ package school.mjc.stage0.conditions.task3;
 
 public class Seasons {
     public void tellTheSeasonByMonthNumber(int month) {
-        switch (month) {
-            case 1, 2, 12 -> System.out.println("Winter");
-            case 3, 4, 5 -> System.out.println("Spring");
-            case 6, 7, 8 -> System.out.println("Summer");
-            case 9, 10, 11 -> System.out.println("Autumn");
-            default -> System.out.println("wrong number!");
+        if (month < 1 || month > 12) {
+            System.out.println("wrong number!");
+            return;
         }
+        if (month == 12 || month == 1 || month == 2) {
+            System.out.println("Winter");
+            return;
+        }
+        if (month < 6) {
+            System.out.println("Spring");
+            return;
+        }
+        if (month < 9) {
+            System.out.println("Summer");
+            return;
+        }
+        System.out.println("Autumn");
     }
 }
+
